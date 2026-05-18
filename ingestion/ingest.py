@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import psycopg2
 from dotenv import load_dotenv
-from pyarrow.compute import fill_null
+import psycopg2.extras
 
 load_dotenv()
 
@@ -39,6 +39,7 @@ def ingest_to_postgres(df: pd.DataFrame):
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
 
+    print("Inserting rows — this will take just a few seconds...")
     cursor.execute("""
         DROP TABLE IF EXISTS yellow_trips;
         CREATE TABLE yellow_trips (
@@ -55,25 +56,19 @@ def ingest_to_postgres(df: pd.DataFrame):
             do_location_id INTEGER
         );
     """)
+    # 1. Define the specific columns to extract in the correct order
+    columns = [
+        "VendorID", "tpep_pickup_datetime", "tpep_dropoff_datetime",
+        "passenger_count", "trip_distance", "fare_amount", "tip_amount",
+        "total_amount", "payment_type", "PULocationID", "DOLocationID"
+    ]
 
-    print("Inserting rows — this will take a few minutes...")
-    for _, row in df.iterrows():
-        cursor.execute("""            INSERT INTO yellow_trips VALUES (
-                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
-            )
-        """, (
-            row.get("VendorID"),
-            row.get("tpep_pickup_datetime"),
-            row.get("tpep_dropoff_datetime"),
-            row.get("passenger_count"),
-            row.get("trip_distance"),
-            row.get("fare_amount"),
-            row.get("tip_amount"),
-            row.get("total_amount"),
-            row.get("payment_type"),
-            row.get("PULocationID"),
-            row.get("DOLocationID"),
-        ))
+    # 2. Convert DataFrame rows into a list of tuples efficiently
+    data_tuples = [tuple(x) for x in df[columns].to_numpy()]
+
+    # 3. Perform bulk insertion
+    query = "INSERT INTO yellow_trips VALUES %s"
+    psycopg2.extras.execute_values(cursor, query, data_tuples)
 
     conn.commit()
     cursor.close()

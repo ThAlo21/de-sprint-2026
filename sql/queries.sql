@@ -1,26 +1,4 @@
-""""
 
-
-
-
-
-
- CREATE TABLE yellow_trips (
-            vendor_id INTEGER,
-            pickup_datetime TIMESTAMP,
-            dropoff_datetime TIMESTAMP,
-            passenger_count INTEGER,
-            trip_distance FLOAT,
-            fare_amount FLOAT,
-            tip_amount FLOAT,
-            total_amount FLOAT,
-            payment_type INTEGER,
-            pu_location_id INTEGER,
-            do_location_id BIGINT
-        );
-
-
-""""
 
 
 
@@ -41,7 +19,7 @@
 
 ---Average fare and tip amount by hour of day
 
- SELECT EXTRACT(hour FROM pickup_datetime) as pickup_hours, avg(fare_amount) as average_fare, avg(tip_amount) as average_tips ,count(*) as trip_count FROM yellow_trips
+ SELECT EXTRACT(hour FROM pickup_datetime) as pickup_hours, ROUND(avg(fare_amount),2) as average_fare, ROUND(avg(tip_amount),2) as average_tips ,count(*) as trip_count FROM yellow_trips
  GROUP BY pickup_hours ORDER BY pickup_hours ASC ;
 
 
@@ -65,7 +43,7 @@ CASE payment_type
     WHEN 4 THEN 'Dispute'
     ELSE 'Unknown'
 END AS payment_type_name,
-count(*) as total_trips, avg(trip_distance) average_trip_distance from yellow_trips GROUP BY payment_type_name
+count(*) as total_trips, ROUND(avg(trip_distance),2) as average_trip_distance from yellow_trips GROUP BY payment_type_name
 ORDER BY total_trips DESC;
 
 
