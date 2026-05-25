@@ -4,6 +4,20 @@ import psycopg2
 from dotenv import load_dotenv
 import psycopg2.extras
 
+import logging
+import sys
+
+# 1. Configure logging to show time, severity, and message
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.StreamHandler(sys.stdout)  # Outputs to console
+        # logging.FileHandler("pipeline.log") # Uncomment to also save to a file
+    ]
+)
+logger = logging.getLogger(__name__)
+
 load_dotenv()
 
 DB_CONFIG = {
@@ -76,7 +90,19 @@ def ingest_to_postgres(df: pd.DataFrame):
     print("Done. Data loaded into yellow_trips table.")
 
 if __name__ == "__main__":
-    df = load_data(PARQUET_PATH)
-    df = clean_data(df)
-    ingest_to_postgres(df)
+    try:
+        logger.info("Starting data pipeline...")
 
+        df = load_data(PARQUET_PATH)
+        logger.info("Data loaded successfully.")
+
+        df = clean_data(df)
+        logger.info("Data cleaning complete.")
+
+        ingest_to_postgres(df)
+        logger.info("Data successfully ingested to Postgres.")
+
+    except Exception as e:
+        # 2. Use logger.exception to automatically print the full traceback
+        logger.exception("Pipeline failed:")
+        sys.exit(1)  # Exit with an error code for automation tools
