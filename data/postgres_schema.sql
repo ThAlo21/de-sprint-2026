@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS yellow_tripdata_2026_01 (
+    "VendorID" INT,
+    "tpep_pickup_datetime" TIMESTAMP,
+    "tpep_dropoff_datetime" TIMESTAMP,
+    "passenger_count" BIGINT,
+    "trip_distance" DOUBLE PRECISION,
+    "RatecodeID" BIGINT,
+    "store_and_fwd_flag" TEXT,
+    "PULocationID" INT,
+    "DOLocationID" INT,
+    "payment_type" BIGINT,
+    "fare_amount" DOUBLE PRECISION,
+    "extra" DOUBLE PRECISION,
+    "mta_tax" DOUBLE PRECISION,
+    "tip_amount" DOUBLE PRECISION,
+    "tolls_amount" DOUBLE PRECISION,
+    "improvement_surcharge" DOUBLE PRECISION,
+    "total_amount" DOUBLE PRECISION,
+    "congestion_surcharge" DOUBLE PRECISION,
+    "Airport_fee" DOUBLE PRECISION,
+    "cbd_congestion_fee" DOUBLE PRECISION
+);
