@@ -39,3 +39,4 @@ docker exec -it urbanmove_db psql -U urbanmove -d taxi_db -f sql/queries.sql
 - Unknown payment type category includes null records (sentinel value -1)
 - Average trip distance for Unknown category is anomalous (11.6 miles)
 - Treat Unknown category with caution in downstream analysis
+- NaN or null values in store_and_fwd_flag --> is_stored_locally  (sentinel value 'X')

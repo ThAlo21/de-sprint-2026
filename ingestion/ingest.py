@@ -28,7 +28,7 @@ DB_CONFIG = {
     "password": os.getenv("DB_PASSWORD"),
 }
 
-PARQUET_PATH = "data/raw/yellow_tripdata_2026-01.parquet"
+PARQUET_PATH = r"/Users/thameralotaibi/Documents/de-sprint-2026/data/raw/yellow_tripdata_2026-01.parquet"
 
 def load_data(path: str) -> pd.DataFrame:
     print(f"Loading data from {path}...")
@@ -45,7 +45,12 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df[df["tpep_pickup_datetime"] < df["tpep_dropoff_datetime"]]
     df["payment_type"] = df["payment_type"].astype("int32")
     df["passenger_count"] = df["passenger_count"].fillna(-1)
+    # 1. Swap the literal text words "nan" or "None" with 'X'
+    df["store_and_fwd_flag"] = df["store_and_fwd_flag"].astype(str).replace({'nan': 'X', 'None': 'X', '': 'X'})
+    # 2. Catch any leftover true system nulls just in case
+    df["store_and_fwd_flag"] = df["store_and_fwd_flag"].fillna('X')
     print(f"Rows after cleaning: {len(df):,}")
+
     return df
 
 def ingest_to_postgres(df: pd.DataFrame):
@@ -62,20 +67,29 @@ def ingest_to_postgres(df: pd.DataFrame):
             dropoff_datetime TIMESTAMP,
             passenger_count INTEGER,
             trip_distance FLOAT,
+            ratecode_id FLOAT,
+            is_stored_locally char(1),
             fare_amount FLOAT,
             tip_amount FLOAT,
             total_amount FLOAT,
             payment_type INTEGER,
             pu_location_id INTEGER,
-            do_location_id INTEGER
+            do_location_id INTEGER,
+            tolls_amount DOUBLE PRECISION,
+            improvement_surcharge double PRECISION,
+            congestion_surcharge double PRECISION,
+            airport_fee double PRECISION,
+            cbd_congestion_fee double PRECISION,
+            extra DOUBLE PRECISION,
+            mta_tax DOUBLE PRECISION
         );
     """)
     # 1. Define the specific columns to extract in the correct order
     columns = [
         "VendorID", "tpep_pickup_datetime", "tpep_dropoff_datetime",
-        "passenger_count", "trip_distance", "fare_amount", "tip_amount",
-        "total_amount", "payment_type", "PULocationID", "DOLocationID"
-    ]
+        "passenger_count", "trip_distance","RatecodeID", "store_and_fwd_flag", "fare_amount", "tip_amount",
+        "total_amount", "payment_type", "PULocationID", "DOLocationID","tolls_amount","improvement_surcharge",
+        "congestion_surcharge", "Airport_fee", "cbd_congestion_fee", "extra", "mta_tax"]
 
     # 2. Convert DataFrame rows into a list of tuples efficiently
     data_tuples = [tuple(x) for x in df[columns].to_numpy()]
