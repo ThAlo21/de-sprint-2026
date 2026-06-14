@@ -1,0 +1,143 @@
+version: 2
+
+sources:
+  - name: taxi_data
+    database: taxi_db                   # 2. Taken directly from your error log
+    schema: public
+    description: "Storage folder containing raw, unedited taxi travel data."
+    tables:
+      - name: yellow_trips
+        description: "The original spreadsheet list of all yellow taxi trip records."
+
+        # ────────── SOURCE-LEVEL TESTS (SPRINT 1 CONTRACT) ──────────
+        data_tests:
+          # 1. Unique Test on the True Trip Identifiers
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - vendor_id
+                - pickup_datetime
+
+        columns:
+          # 2. Not Null Tests on the Trip Identifiers
+          - name: vendor_id
+            data_tests:
+              - not_null
+          - name: pickup_datetime
+            data_tests:
+              - not_null
+
+models:
+  - name: stg_yellow_trips
+    description: "Cleaned and organized list of taxi trip records, ready for business reporting."
+    columns:
+      - name: trip_id
+        description: "A simple, readable ID text combining the company and start time."
+        data_tests:
+          - unique
+          - not_null
+      - name: vendor_id
+        description: "The ID code of the taxi company that provided the ride service."
+        data_tests:
+          - not_null
+
+      - name: pickup_datetime
+        description: "The exact date and time the passenger got into the taxi and the meter started."
+        data_tests:
+          - not_null
+
+      - name: dropoff_datetime
+        description: "The exact date and time the passenger got out of the taxi and the ride ended."
+        data_tests:
+          - not_null
+
+      - name: passenger_count
+        description: "The total number of people sitting in the vehicle during the ride."
+        data_tests:
+          - not_null
+
+      - name: trip_distance
+        description: "The total length of the ride measured in miles."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: ratecode_id
+        description: "The type of pricing rate applied to the trip (like Standard, Airport, or Out of Town)."
+
+      - name: is_stored_locally
+        description: "Shows True if the ride data was saved inside the car's computer system before upload, or False if it was uploaded live. A Null value means the status is completely missing or unknown (from the ingestion 'X' flag)."
+
+      - name: fare_amount
+        description: "The base cost of the ride calculated purely by distance and time spent driving."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: tip_amount
+        description: "The tip added by the customer. This only tracks credit card tips, cash tips are not recorded."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: total_amount
+        description: "The final total amount of money charged to the customer's card for the entire trip."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: payment_type
+        description: "How the customer paid for the ride (such as Cash, Credit Card, or Dispute)."
+        data_tests:
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5, 6]
+
+      - name: pickup_location_id
+        description: "The official city zone code where the taxi ride started."
+        data_tests:
+          - not_null
+
+      - name: dropoff_location_id
+        description: "The official city zone code where the taxi ride ended."
+        data_tests:
+          - not_null
+
+      - name: tolls_amount
+        description: "The money paid for bridges, tunnels, or toll highways during the trip."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: improvement_surcharge
+        description: "A small fixed public safety and maintenance fee added to every ride."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: congestion_surcharge
+        description: "An extra fee charged for driving through heavy traffic areas in the city."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: airport_fee
+        description: "The special surcharge added for dropping off or picking up passengers at an airport."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: cbd_congestion_fee
+        description: "The business district traffic fee added for driving through downtown zones."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: extra_surcharge
+        description: "Extra standard fees, like the overnight travel charge or rush hour fee."
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= -5.00" 
+      - name: regional_tax
+        description: "The standard regional transit tax added automatically to the bill."
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
