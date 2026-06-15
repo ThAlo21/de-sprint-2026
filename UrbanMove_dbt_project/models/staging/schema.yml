@@ -133,11 +133,54 @@ models:
 
       - name: extra_surcharge
         description: "Extra standard fees, like the overnight travel charge or rush hour fee."
-        tests:
+        data_tests:
           - dbt_utils.expression_is_true:
-              expression: ">= -5.00" 
+              expression: ">= -5.00"
+
       - name: regional_tax
         description: "The standard regional transit tax added automatically to the bill."
         data_tests:
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
+  - name: fct_revenue_by_zone
+    description: >
+      This table provides a complete summary of hourly business earnings broken down by specific pickup areas. 
+      It calculates the absolute total money collected from customer fares, driver tips, road tolls, and special 
+      airport service fees. To ensure our earnings data is highly accurate for business planning, this model 
+      automatically filters out any trips involving payment arguments or free promo rides, leaving only 
+      successful financial transactions.
+
+    columns:
+      - name: revenue
+        description: >
+          The final total dollar amount collected from all added fees, rounded neatly to two decimal places 
+          representing standard dollars and cents.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: pickup_date
+        description: >
+          The clean calendar date showing exactly when the customers were picked up by the taxi.
+        data_tests:
+          - not_null
+
+      - name: pickup_hour
+        description: >
+          The specific hour of the day (from 0 to 23) when the customer ride started.
+        data_tests:
+          - not_null
+
+      - name: trip_count
+        description: >
+          The absolute total number of customer trips completed during this specific hour and at this location.
+        data_tests:
+          - not_null
+
+      - name: pickup_location_id
+        description: >
+          The unique official neighborhood or zone identification number where the customer entered the vehicle.
+        data_tests:
+          - not_null
