@@ -28,7 +28,7 @@ DB_CONFIG = {
     "password": os.getenv("DB_PASSWORD"),
 }
 
-PARQUET_PATH = r"/Users/thameralotaibi/Documents/de-sprint-2026/data/raw/yellow_tripdata_2026-01.parquet"
+PARQUET_PATH = os.getenv("PARQUET_PATH", "data/raw/yellow_tripdata_2026-01.parquet")
 
 def load_data(path: str) -> pd.DataFrame:
     print(f"Loading data from {path}...")
