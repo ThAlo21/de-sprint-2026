@@ -5,10 +5,10 @@ Automated analytics infrastructure for the UrbanMove data platform. This project
 
 * **Sprint 1 (Ticket DE-2024-047)**: Raw ingestion engine for NYC Yellow Taxi trip records.
 * **Sprint 2 (Ticket DE-2024-061 - High Priority)**: Analytics engineering transformation layer built to resolve a critical $400K reporting variance between Finance ($4.2M) and Operations ($3.8M).
-
+* **Sprint 3 (Ticket DE-2024-089)- Critical)**: Diagnose and fix a broken PySpark ingestion job that is crashing production and blocking the Q3 data freeze .
 ### The Business Context
 The revenue discrepancy was traced back to decentralized analysts query-building from mismatched source tables, applying conflicting filters, and using disjointed definitions. This dbt layer enforces **one consistent calculation layout, one verified metric, and one unified truth** to protect future CFO financial audits.
-
+The previous engineer left a PySpark script at ingestion/spark_ingest.py. It has multiple performance and correctness issues deliberately introduced. Your job is to find them, fix them, and explain each one.
 ---
 
 ## Tech Stack
@@ -17,6 +17,7 @@ The revenue discrepancy was traced back to decentralized analysts query-building
 - **Docker** — Containerized local infrastructure
 - **pandas + pyarrow** — Automated data parsing and cleaning
 - **dbt Core 1.8.0** — Data transformation, dependency lineage, and testing
+- **java 17 + spark version 4.1.2  **- for running spark .
 
 ---
 
@@ -32,6 +33,11 @@ The revenue discrepancy was traced back to decentralized analysts query-building
 * **`stg_yellow_trips`**: Cleaned structural view mapping directly to raw infrastructure, handling atomic type casting and column renaming without altering business logic.
 * **`fct_revenue_by_zone`**: Final materialized analytics table aggregating revenue records by **day**, **hour of day**, and **pickup zone**.
 
+### 3. Code Issues & Optimization Summary
+- **Critical Bug Fixes **: Removed .collect(), bumped memory to 1g, and set shuffle partitions to 8 to utilize hardware and eliminate Out-Of-Memory (OOM) crashes.
+- **Why .collect() is an OOM Killer **: It pulls the entire distributed dataset into the driver's local memory, completely breaking Spark's parallel architecture.
+- **Operation Order Matters **: Filtering and deduplicating rows first minimizes data volume early, preventing down-stream row mismatches and speeding up transformations.
+- **Partitioning Strategy **: Partitioning data by day limits individual file sizes below the 1 GB best-practice threshold, resulting in roughly 31 optimized, business-ready files.
 ---
 
 ## How To Run
@@ -42,14 +48,30 @@ Spin up the containerized PostgreSQL data warehouse:
 docker compose -f docker/docker-compose.yml --env-file .env up -d
 ```
 
-### 2. Execute Data Ingestion
+### 2. Execute Data Ingestion (Legacy Python Engine)
 Load, clean, and stream the raw trip files into the staging area:
 ```bash
 source venv/bin/activate
 python ingestion/ingest.py
 ```
 
-### 3. Run and Test the dbt Transformation Pipeline
+### 3. Execute Optimized Spark Ingestion Engine (Sprint 3)
+Run the corrected, high-performance PySpark cleaning and partitioning pipeline:
+
+```bash
+# 1. Verify Java 17 is active in your terminal session
+java -version
+
+# 2. Configure paths and set standard flags for macOS/Java 17 compatibility
+export PARQUET_PATH="../data/raw/yellow_tripdata_2026-01.parquet"
+export JAVA_TOOL_OPTIONS="--add-opens=java.base/sun.nio.ch=ALL-UNNAMED"
+
+# 3. Execute the high-volume ingestion pipeline
+python ingestion/spark_ingest.py
+```
+*(Note: If you run into broader module isolation errors on modern macOS environments, append the required internal memory flags to `SPARK_SUBMIT_OPTS` to safely open boundaries for NIO, IO, and internal utilities).*
+
+### 4. Run and Test the dbt Transformation Pipeline
 Download the required utility packages, compile the modular SQL logic, build production tables, and run all automated data contract tests:
 ```bash
 # Fetch required macro extensions (dbt_utils)

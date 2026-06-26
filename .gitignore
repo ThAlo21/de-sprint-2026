@@ -1,5 +1,11 @@
+cat > ~/Documents/de-sprint-2026/.gitignore << 'EOF'
 .env
 __pycache__/
 *.pyc
 .DS_Store
 venv/
+.idea/
+data/testDF.py
+data/postgres_schema.sql
+ingestion/jars/
+EOF

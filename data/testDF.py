@@ -3,38 +3,60 @@ import duckdb as db
 import pyarrow.parquet as pq
 from pyarrow import parquet
 import pandas as pd
-
+from pyspark.sql import SparkSession
+from pyspark.sql import functions as F
+from pyspark.sql.types import *
 
 parquet_file = pq.ParquetFile("raw/yellow_tripdata_2026-01.parquet")
 Parquet = "raw/yellow_tripdata_2026-01.parquet"
 
+# # 1. Run a standard SELECT query to preview the data rows
+# print("--- Data Preview ---")
+# preview = db.query(f"SELECT * FROM '{Parquet}'").df()
+# print(preview)
+#
+# # 2. Check the actual data profile (Min, Max, Null counts) to verify your types
+# print("\n--- Column Value Summary : store_and_fwd_flag :  ---")
+# summary = db.query(f"""
+#     SELECT
+#         extra,
+#         COUNT(extra) AS Code_Count, max(extra)
+#     FROM '{Parquet}'
+#     GROUP BY extra
+# """).df()
+# print(summary)
 
-# 1. Run a standard SELECT query to preview the data rows
-print("--- Data Preview ---")
-preview = db.query(f"SELECT * FROM '{Parquet}'").df()
-print(preview)
+# df = pd.read_parquet(Parquet)
+# df = spark.read.parquet(Parquet)
+# df['tpep_pickup_datetime'] = pd.to_datetime(df['tpep_pickup_datetime'])
+# df['pickup_month'] = df['tpep_pickup_datetime'].dt.month
+# print("*************** Here is Candidate one ***************")
+# print("\n--- Rows per Month ---")
+# print(df.groupby("PULocationID").size())
 
+df = pd.read_parquet("raw/yellow_tripdata_2026-01.parquet")
+print(df[df["tpep_pickup_datetime"].dt.month != 1]["tpep_pickup_datetime"].describe())
 
-# 2. Check the actual data profile (Min, Max, Null counts) to verify your types
-print("\n--- Column Value Summary : store_and_fwd_flag :  ---")
-summary = db.query(f"""
-    SELECT 
-        extra,
-        COUNT(extra) AS Code_Count, max(extra)
-    FROM '{Parquet}'
-    GROUP BY extra
-""").df()
-print(summary)
+# print("--- Running Custom Partitioning Logic ---")
 
+# 3. Create a calculated 'partition_key' column
+# If the record belongs to January 2026, use its day number (1-31) as a string.
+# Otherwise, group it into 'others'.
+#df['partition_key'] = df['tpep_pickup_datetime'].apply(
+#    lambda x: str(x.day) if (x.year == 2026 and x.month == 1) else 'others'
+#)
 
-df = pd.read_parquet(Parquet)
-print("*************** Here is Nullssss of each column ***************")
-see_col = ["mta_tax", "extra"]
-specific_null_counts = df[see_col].isnull().sum()
-print(specific_null_counts)
-print("*************** Here is datatypes of each column ***************")
-specific_col_dtypes = df[see_col].dtypes
-print(specific_col_dtypes)
+# 4. Profile the new partition key to verify the balance before writing
+#print("\n*************** Verified Partition Key Counts ***************")
+#print(df.groupby("partition_key").size())
+
+# print("*************** Here is Nullssss of each column ***************")
+# see_col = ["mta_tax", "extra"]
+# specific_null_counts = df[see_col].isnull().sum()
+# print(specific_null_counts)
+# print("*************** Here is datatypes of each column ***************")
+# specific_col_dtypes = df[see_col].dtypes
+# print(specific_col_dtypes)
 
 
 
@@ -62,7 +84,7 @@ print(specific_col_dtypes)
 
 
 
-
+'''
 # Function to map PyArrow types to PostgreSQL data types
 def map_to_postgres_type(col_schema):
     p_type = str(col_schema.physical_type).upper()
@@ -94,7 +116,7 @@ def map_to_postgres_type(col_schema):
 
     else:
         return "TEXT"
-
+'''
 
 # Build the PostgreSQL DDL string
 """

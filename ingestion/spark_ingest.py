@@ -17,11 +17,12 @@ print("Cleaning data...")
 df_deduped = df.dropDuplicates(["VendorID", "tpep_pickup_datetime"])
 
 # 2. Row Filters
-df_clean = (df_deduped.filter(F.col("fare_amount") > 0))
-df_clean_2 = df_clean.filter(F.col("tpep_pickup_datetime") < F.col("tpep_dropoff_datetime"))
+df_clean = df_deduped \
+    .filter(F.col("fare_amount") > 0) \
+    .filter(F.col("tpep_pickup_datetime") < F.col("tpep_dropoff_datetime"))
 
 # 3. Data Type Casts & Null Handling
-df_transformed = df_clean_2.withColumn("payment_type", F.col("payment_type").cast(IntegerType())).fillna(-1, subset=["passenger_count"])
+df_transformed = df_clean.withColumn("payment_type", F.col("payment_type").cast(IntegerType())).fillna(-1, subset=["passenger_count"])
 
 # 4. Handle 'store_and_fwd_flag' (Replaces pandas string replaces and fillna)
 df_transformed = df_transformed.withColumn(
