@@ -32,3 +32,17 @@
 - **Best way that data organized in , and never effected the business is  to partition based on day .
 - **That will result 32 files with bearable size .
 
+## Airflow + Kafka (Sprint 4)
+
+### Production vs Local Limitations
+- **Spark in Airflow:** In production use `SparkSubmitOperator` 
+  pointing at a dedicated Spark cluster (Databricks, EMR, YARN). 
+  Locally, PySpark cannot be installed in the standard Airflow image.
+- **dbt in Airflow:** In production install dbt in the Airflow 
+  environment or use Astronomer Cosmos provider which converts dbt 
+  models into native Airflow tasks automatically.
+- **Kafka consumer offsets:** Always use `enable.auto.commit=False` 
+  and commit manually after processing. Default auto-commit causes 
+  data loss on crashes.
+- **Consumer groups:** `group.id` is the key to offset recovery — 
+  same group.id = resume from last committed offset on restart.

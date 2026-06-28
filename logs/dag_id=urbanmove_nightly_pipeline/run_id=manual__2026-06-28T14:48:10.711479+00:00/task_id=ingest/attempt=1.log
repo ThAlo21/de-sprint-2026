@@ -1,0 +1,32 @@
+[2026-06-28T14:48:11.210+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-28T14:48:11.223+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: urbanmove_nightly_pipeline.ingest manual__2026-06-28T14:48:10.711479+00:00 [queued]>
+[2026-06-28T14:48:11.226+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: urbanmove_nightly_pipeline.ingest manual__2026-06-28T14:48:10.711479+00:00 [queued]>
+[2026-06-28T14:48:11.226+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-06-28T14:48:11.230+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): ingest> on 2026-06-28 14:48:10.711479+00:00
+[2026-06-28T14:48:11.233+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1676) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-28T14:48:11.232+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'urbanmove_nightly_pipeline', 'ingest', 'manual__2026-06-28T14:48:10.711479+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/urbanmove_nightly.py', '--cfg-path', '/tmp/tmpxop7_jpe']
+[2026-06-28T14:48:11.234+0000] {standard_task_runner.py:91} INFO - Job 26: Subtask ingest
+[2026-06-28T14:48:11.234+0000] {standard_task_runner.py:63} INFO - Started process 1677 to run task
+[2026-06-28T14:48:11.259+0000] {task_command.py:426} INFO - Running <TaskInstance: urbanmove_nightly_pipeline.ingest manual__2026-06-28T14:48:10.711479+00:00 [running]> on host 2982c3a45458
+[2026-06-28T14:48:11.289+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='urbanmove-de' AIRFLOW_CTX_DAG_ID='urbanmove_nightly_pipeline' AIRFLOW_CTX_TASK_ID='ingest' AIRFLOW_CTX_EXECUTION_DATE='2026-06-28T14:48:10.711479+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-28T14:48:10.711479+00:00'
+[2026-06-28T14:48:11.290+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-28T14:48:11.296+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-06-28T14:48:11.296+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/airflow/project/ingestion/ingest.py']
+[2026-06-28T14:48:11.299+0000] {subprocess.py:86} INFO - Output:
+[2026-06-28T14:48:11.671+0000] {subprocess.py:93} INFO - 2026-06-28 14:48:11,671 [INFO] Starting data pipeline...
+[2026-06-28T14:48:11.886+0000] {subprocess.py:93} INFO - Loading data from /opt/airflow/project/data/raw/yellow_tripdata_2026-01.parquet...
+[2026-06-28T14:48:11.886+0000] {subprocess.py:93} INFO - Loaded 3,724,889 rows and 20 columns
+[2026-06-28T14:48:11.886+0000] {subprocess.py:93} INFO - 2026-06-28 14:48:11,885 [INFO] Data loaded successfully.
+[2026-06-28T14:48:12.638+0000] {subprocess.py:93} INFO - Cleaning data...
+[2026-06-28T14:48:12.639+0000] {subprocess.py:93} INFO - Rows after cleaning: 2,154,399
+[2026-06-28T14:48:12.639+0000] {subprocess.py:93} INFO - 2026-06-28 14:48:12,638 [INFO] Data cleaning complete.
+[2026-06-28T14:49:05.480+0000] {subprocess.py:93} INFO - Connecting to PostgreSQL...
+[2026-06-28T14:49:05.481+0000] {subprocess.py:93} INFO - Inserting rows — this will take just a few seconds...
+[2026-06-28T14:49:05.481+0000] {subprocess.py:93} INFO - Done. Data loaded into yellow_trips table.
+[2026-06-28T14:49:05.481+0000] {subprocess.py:93} INFO - 2026-06-28 14:49:05,480 [INFO] Data successfully ingested to Postgres.
+[2026-06-28T14:49:05.513+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-06-28T14:49:05.514+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-28T14:49:05.525+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=urbanmove_nightly_pipeline, task_id=ingest, run_id=manual__2026-06-28T14:48:10.711479+00:00, execution_date=20260628T144810, start_date=20260628T144811, end_date=20260628T144905
+[2026-06-28T14:49:05.554+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-28T14:49:05.563+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-28T14:49:05.563+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

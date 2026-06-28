@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 
 DB_CONFIG = {
-    "host": "localhost",
+    "host": "postgres",
     "port": 5432,
     "dbname": os.getenv("DB_NAME"),
     "user": os.getenv("DB_USER"),

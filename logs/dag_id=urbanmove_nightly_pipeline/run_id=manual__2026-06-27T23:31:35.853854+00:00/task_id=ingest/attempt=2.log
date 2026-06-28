@@ -1,0 +1,62 @@
+[2026-06-27T23:36:40.985+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-27T23:36:41.031+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: urbanmove_nightly_pipeline.ingest manual__2026-06-27T23:31:35.853854+00:00 [queued]>
+[2026-06-27T23:36:41.035+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: urbanmove_nightly_pipeline.ingest manual__2026-06-27T23:31:35.853854+00:00 [queued]>
+[2026-06-27T23:36:41.035+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2026-06-27T23:36:41.042+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): ingest> on 2026-06-27 23:31:35.853854+00:00
+[2026-06-27T23:36:41.046+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'urbanmove_nightly_pipeline', 'ingest', 'manual__2026-06-27T23:31:35.853854+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/urbanmove_nightly.py', '--cfg-path', '/tmp/tmp997ijsa_']
+[2026-06-27T23:36:41.047+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask ingest
+[2026-06-27T23:36:41.048+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=641) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-27T23:36:41.048+0000] {standard_task_runner.py:63} INFO - Started process 642 to run task
+[2026-06-27T23:36:41.069+0000] {task_command.py:426} INFO - Running <TaskInstance: urbanmove_nightly_pipeline.ingest manual__2026-06-27T23:31:35.853854+00:00 [running]> on host 2982c3a45458
+[2026-06-27T23:36:41.111+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='urbanmove-de' AIRFLOW_CTX_DAG_ID='urbanmove_nightly_pipeline' AIRFLOW_CTX_TASK_ID='ingest' AIRFLOW_CTX_EXECUTION_DATE='2026-06-27T23:31:35.853854+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-27T23:31:35.853854+00:00'
+[2026-06-27T23:36:41.111+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-27T23:36:41.123+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-06-27T23:36:41.123+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/airflow/project/ingestion/ingest.py']
+[2026-06-27T23:36:41.127+0000] {subprocess.py:86} INFO - Output:
+[2026-06-27T23:36:41.671+0000] {subprocess.py:93} INFO - 2026-06-27 23:36:41,671 [INFO] Starting data pipeline...
+[2026-06-27T23:36:42.021+0000] {subprocess.py:93} INFO - Loading data from /opt/airflow/project/data/raw/yellow_tripdata_2026-01.parquet...
+[2026-06-27T23:36:42.024+0000] {subprocess.py:93} INFO - Loaded 3,724,889 rows and 20 columns
+[2026-06-27T23:36:42.024+0000] {subprocess.py:93} INFO - 2026-06-27 23:36:42,020 [INFO] Data loaded successfully.
+[2026-06-27T23:36:42.962+0000] {subprocess.py:93} INFO - Cleaning data...
+[2026-06-27T23:36:42.963+0000] {subprocess.py:93} INFO - Rows after cleaning: 2,154,399
+[2026-06-27T23:36:42.963+0000] {subprocess.py:93} INFO - 2026-06-27 23:36:42,962 [INFO] Data cleaning complete.
+[2026-06-27T23:36:42.966+0000] {subprocess.py:93} INFO - Connecting to PostgreSQL...
+[2026-06-27T23:36:42.969+0000] {subprocess.py:93} INFO - Inserting rows — this will take just a few seconds...
+[2026-06-27T23:36:42.969+0000] {subprocess.py:93} INFO - 2026-06-27 23:36:42,965 [ERROR] Pipeline failed:
+[2026-06-27T23:36:42.969+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-06-27T23:36:42.969+0000] {subprocess.py:93} INFO -   File "/opt/airflow/project/ingestion/ingest.py", line 116, in <module>
+[2026-06-27T23:36:42.969+0000] {subprocess.py:93} INFO -     ingest_to_postgres(df)
+[2026-06-27T23:36:42.970+0000] {subprocess.py:93} INFO -   File "/opt/airflow/project/ingestion/ingest.py", line 62, in ingest_to_postgres
+[2026-06-27T23:36:42.970+0000] {subprocess.py:93} INFO -     cursor.execute("""
+[2026-06-27T23:36:42.970+0000] {subprocess.py:93} INFO - psycopg2.errors.DependentObjectsStillExist: cannot drop table yellow_trips because other objects depend on it
+[2026-06-27T23:36:42.970+0000] {subprocess.py:93} INFO - DETAIL:  view dbt_dev.stg_yellow_trips depends on table yellow_trips
+[2026-06-27T23:36:42.970+0000] {subprocess.py:93} INFO - HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+[2026-06-27T23:36:42.970+0000] {subprocess.py:93} INFO - 
+[2026-06-27T23:36:43.018+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-06-27T23:36:43.019+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-27T23:36:43.025+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-06-27T23:36:43.027+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=urbanmove_nightly_pipeline, task_id=ingest, run_id=manual__2026-06-27T23:31:35.853854+00:00, execution_date=20260627T233135, start_date=20260627T233641, end_date=20260627T233643
+[2026-06-27T23:36:43.027+0000] {logging_mixin.py:188} INFO - 
+============================================================
+[2026-06-27T23:36:43.027+0000] {logging_mixin.py:188} INFO - CRITICAL TASK FAILURE TRIGGERED
+[2026-06-27T23:36:43.027+0000] {logging_mixin.py:188} INFO - Task ID:       ingest
+[2026-06-27T23:36:43.027+0000] {logging_mixin.py:188} INFO - DAG ID:        urbanmove_nightly_pipeline
+[2026-06-27T23:36:43.027+0000] {logging_mixin.py:188} INFO - Execution Date: 2026-06-26 02:00:00+00:00
+[2026-06-27T23:36:43.027+0000] {logging_mixin.py:188} INFO - ============================================================
+[2026-06-27T23:36:43.032+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 12 for task ingest (Bash command failed. The command returned a non-zero exit code 1.; 642)
+[2026-06-27T23:36:43.040+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-06-27T23:36:43.050+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-27T23:36:43.051+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
