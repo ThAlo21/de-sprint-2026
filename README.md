@@ -74,10 +74,10 @@ python ingestion/ingest.py
 Generate and track live trip events over the containerized messaging loop:
 ```bash
 # 1. Start the high-performance Python event producer in Terminal 1
-python streaming/producer.py
+python streaming/taxi_tripdata_producer.py
 
 # 2. Launch the offset-safe validation consumer engine in Terminal 2
-python streaming/consumer.py
+python streaming/taxi_tripdata_consumer.py
 
 ```
 

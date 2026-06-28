@@ -8,7 +8,7 @@ from confluent_kafka import Producer
 
 # --- CONFIGURABLE SETTINGS ---
 PARQUET_PATH = os.getenv("PARQUET_PATH", "../data/raw/yellow_tripdata_2026-01.parquet")
-KAFKA_BOOTSTRAP_SERVER = "kafka-local:9092"
+KAFKA_BOOTSTRAP_SERVER = os.getenv("KAFKA_BOOTSTRAP_SERVER", "localhost:9092")
 DELAY_SECONDS = float(os.getenv("PRODUCER_DELAY", "0.01"))
 TOPIC_NAME = "taxi.trips.raw"
 CHUNK_SIZE = 10000

@@ -1970,3 +1970,206 @@
 [2026-06-28T16:54:56.894+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:54:56.894+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2026-06-28T16:54:56.903+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:54:56.903+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
 [2026-06-28T16:54:56.909+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.044 seconds
+[2026-06-28T16:55:27.073+0000] {processor.py:161} INFO - Started process (PID=665) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:55:27.074+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:55:27.075+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:55:27.075+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:55:27.084+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:55:27.100+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:55:27.100+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:55:27.110+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:55:27.110+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:55:27.116+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.049 seconds
+[2026-06-28T16:55:57.266+0000] {processor.py:161} INFO - Started process (PID=670) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:55:57.267+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:55:57.268+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:55:57.267+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:55:57.275+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:55:57.292+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:55:57.292+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:55:57.301+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:55:57.301+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:55:57.308+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.047 seconds
+[2026-06-28T16:56:27.446+0000] {processor.py:161} INFO - Started process (PID=675) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:56:27.446+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:56:27.448+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:56:27.448+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:56:27.456+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:56:27.473+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:56:27.473+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:56:27.482+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:56:27.482+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:56:27.488+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.047 seconds
+[2026-06-28T16:56:57.672+0000] {processor.py:161} INFO - Started process (PID=680) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:56:57.672+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:56:57.674+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:56:57.674+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:56:57.682+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:56:57.701+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:56:57.701+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:56:57.712+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:56:57.712+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:56:57.720+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.053 seconds
+[2026-06-28T16:57:27.877+0000] {processor.py:161} INFO - Started process (PID=685) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:57:27.879+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:57:27.880+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:57:27.880+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:57:27.888+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:57:27.904+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:57:27.904+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:57:27.914+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:57:27.914+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:57:27.920+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.048 seconds
+[2026-06-28T16:57:58.067+0000] {processor.py:161} INFO - Started process (PID=690) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:57:58.068+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:57:58.069+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:57:58.069+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:57:58.077+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:57:58.094+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:57:58.094+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:57:58.103+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:57:58.103+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:57:58.110+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.048 seconds
+[2026-06-28T16:58:28.291+0000] {processor.py:161} INFO - Started process (PID=695) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:58:28.292+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:58:28.293+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:58:28.293+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:58:28.300+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:58:28.316+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:58:28.316+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:58:28.326+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:58:28.326+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:58:28.333+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.047 seconds
+[2026-06-28T16:58:58.479+0000] {processor.py:161} INFO - Started process (PID=700) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:58:58.479+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:58:58.480+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:58:58.480+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:58:58.487+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:58:58.501+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:58:58.501+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:58:58.511+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:58:58.511+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:58:58.517+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.041 seconds
+[2026-06-28T16:59:28.670+0000] {processor.py:161} INFO - Started process (PID=705) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:59:28.671+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:59:28.672+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:59:28.671+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:59:28.677+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:59:28.690+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:59:28.690+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:59:28.702+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:59:28.702+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:59:28.708+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.043 seconds
+[2026-06-28T16:59:58.867+0000] {processor.py:161} INFO - Started process (PID=710) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:59:58.868+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T16:59:58.870+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:59:58.869+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:59:58.879+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T16:59:58.896+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:59:58.896+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T16:59:58.906+0000] {logging_mixin.py:188} INFO - [2026-06-28T16:59:58.906+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T16:59:58.912+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.051 seconds
+[2026-06-28T17:00:29.083+0000] {processor.py:161} INFO - Started process (PID=715) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:00:29.084+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:00:29.085+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:00:29.085+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:00:29.093+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:00:29.110+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:00:29.110+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:00:29.119+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:00:29.119+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:00:29.125+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.047 seconds
+[2026-06-28T17:00:59.284+0000] {processor.py:161} INFO - Started process (PID=720) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:00:59.284+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:00:59.286+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:00:59.285+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:00:59.294+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:00:59.311+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:00:59.311+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:00:59.322+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:00:59.321+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:00:59.328+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.050 seconds
+[2026-06-28T17:01:29.480+0000] {processor.py:161} INFO - Started process (PID=725) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:01:29.480+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:01:29.482+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:01:29.481+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:01:29.490+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:01:29.507+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:01:29.507+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:01:29.517+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:01:29.517+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:01:29.523+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.049 seconds
+[2026-06-28T17:01:59.683+0000] {processor.py:161} INFO - Started process (PID=730) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:01:59.684+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:01:59.685+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:01:59.685+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:01:59.694+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:01:59.711+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:01:59.711+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:01:59.721+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:01:59.721+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:01:59.727+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.049 seconds
+[2026-06-28T17:02:29.873+0000] {processor.py:161} INFO - Started process (PID=735) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:02:29.874+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:02:29.876+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:02:29.876+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:02:29.885+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:02:29.901+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:02:29.901+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:02:29.911+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:02:29.910+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:02:29.917+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.049 seconds
+[2026-06-28T17:03:00.075+0000] {processor.py:161} INFO - Started process (PID=740) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:03:00.076+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:03:00.077+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:03:00.077+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:03:00.086+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:03:00.103+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:03:00.103+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:03:00.112+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:03:00.112+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:03:00.118+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.048 seconds
+[2026-06-28T17:03:30.285+0000] {processor.py:161} INFO - Started process (PID=745) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:03:30.286+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:03:30.288+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:03:30.287+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:03:30.297+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:03:30.315+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:03:30.315+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:03:30.325+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:03:30.325+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:03:30.331+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.051 seconds
+[2026-06-28T17:04:00.480+0000] {processor.py:161} INFO - Started process (PID=750) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:04:00.481+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:04:00.482+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:04:00.482+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:04:00.488+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:04:00.503+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:04:00.502+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:04:00.513+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:04:00.513+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:04:00.520+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.045 seconds
+[2026-06-28T17:04:30.679+0000] {processor.py:161} INFO - Started process (PID=755) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:04:30.679+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:04:30.681+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:04:30.681+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:04:30.690+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:04:30.708+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:04:30.708+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:04:30.718+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:04:30.718+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:04:30.724+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.052 seconds
+[2026-06-28T17:05:00.867+0000] {processor.py:161} INFO - Started process (PID=760) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:05:00.867+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:05:00.868+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:05:00.868+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:05:00.876+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:05:00.892+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:05:00.892+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:05:00.902+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:05:00.902+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:05:00.908+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.046 seconds
+[2026-06-28T17:05:31.065+0000] {processor.py:161} INFO - Started process (PID=765) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:05:31.066+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:05:31.068+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:05:31.067+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:05:31.077+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:05:31.094+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:05:31.094+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:05:31.103+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:05:31.103+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:05:31.109+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.050 seconds
+[2026-06-28T17:06:01.262+0000] {processor.py:161} INFO - Started process (PID=770) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:06:01.263+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:06:01.264+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:06:01.264+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:06:01.273+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:06:01.290+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:06:01.290+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:06:01.300+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:06:01.300+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:06:01.306+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.049 seconds
+[2026-06-28T17:06:31.472+0000] {processor.py:161} INFO - Started process (PID=775) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:06:31.473+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:06:31.474+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:06:31.474+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:06:31.483+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:06:31.501+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:06:31.501+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:06:31.510+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:06:31.510+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:06:31.516+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.049 seconds
+[2026-06-28T17:07:01.665+0000] {processor.py:161} INFO - Started process (PID=780) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:07:01.665+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:07:01.667+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:07:01.666+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:07:01.675+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:07:01.692+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:07:01.692+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:07:01.702+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:07:01.702+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:07:01.708+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.049 seconds
+[2026-06-28T17:07:31.867+0000] {processor.py:161} INFO - Started process (PID=785) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:07:31.868+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:07:31.869+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:07:31.869+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:07:31.876+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:07:31.892+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:07:31.892+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:07:31.900+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:07:31.900+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:07:31.907+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.043 seconds
+[2026-06-28T17:08:02.052+0000] {processor.py:161} INFO - Started process (PID=790) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:08:02.053+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:08:02.054+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:08:02.054+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:08:02.063+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:08:02.081+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:08:02.081+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:08:02.090+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:08:02.090+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:08:02.097+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.051 seconds
+[2026-06-28T17:08:32.212+0000] {processor.py:161} INFO - Started process (PID=795) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:08:32.214+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:08:32.216+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:08:32.215+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:08:32.224+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:08:32.241+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:08:32.240+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:08:32.252+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:08:32.252+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:08:32.260+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.053 seconds
+[2026-06-28T17:09:02.412+0000] {processor.py:161} INFO - Started process (PID=800) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:09:02.413+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:09:02.415+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:09:02.414+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:09:02.423+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:09:02.440+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:09:02.440+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:09:02.450+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:09:02.450+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:09:02.456+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.049 seconds
+[2026-06-28T17:09:32.607+0000] {processor.py:161} INFO - Started process (PID=805) to work on /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:09:32.608+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/urbanmove_nightly.py for tasks to queue
+[2026-06-28T17:09:32.609+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:09:32.609+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:09:32.618+0000] {processor.py:840} INFO - DAG(s) 'urbanmove_nightly_pipeline' retrieved from /opt/airflow/dags/urbanmove_nightly.py
+[2026-06-28T17:09:32.635+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:09:32.634+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-28T17:09:32.644+0000] {logging_mixin.py:188} INFO - [2026-06-28T17:09:32.644+0000] {dag.py:3954} INFO - Setting next_dagrun for urbanmove_nightly_pipeline to 2026-06-28 02:00:00+00:00, run_after=2026-06-29 02:00:00+00:00
+[2026-06-28T17:09:32.650+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/urbanmove_nightly.py took 0.048 seconds

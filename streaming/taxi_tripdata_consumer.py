@@ -1,8 +1,9 @@
 import json
+import os
 from datetime import datetime
 from confluent_kafka import Consumer, KafkaError
 
-KAFKA_BOOTSTRAP_SERVER = "kafka-local:9092"
+KAFKA_BOOTSTRAP_SERVER = os.getenv("KAFKA_BOOTSTRAP_SERVER", "localhost:9092")
 TOPIC_NAME = "taxi.trips.raw"
 CONSUMER_GROUP = "taxi-validation-final-group"
 
